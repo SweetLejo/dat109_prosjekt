@@ -54,8 +54,8 @@
                     <tr>
                         <c:choose>
                             <c:when test="${time.bruker.mobil eq bruker.mobil}">
-                                 <td>${time.antallTimer}</td>
-                                <td>${time.prosjekt.prosjekt_id}</td>
+                                <td>${time.antallTimer}</td>
+                                <td>${time.prosjekt.navn}</td>
                             </c:when>
                         </c:choose>
 
