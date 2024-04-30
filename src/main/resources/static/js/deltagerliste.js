@@ -1,5 +1,11 @@
 "use strict";
 
+window.onload = function() {
+    // Initially activate the "Brukere" tab
+    document.querySelector(".tablinks[onclick*='Min-side']").click();
+};
+
+
 function expandView(evt, tabName){
     // Variable for the current tab's content
     let tabcontent;

@@ -1,20 +1,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="no">
 <head>
     <title>Endre passord</title>
+    <script src="js/endrepassordvalidering.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
 <body>
-
-<script src="js/endrepassordvalidering.js" defer></script>
 
 <h2>Endre passord</h2>
 <p style="color:red;">${endrePassordFeilmelding}</p>
 
 <fieldset>
 	<form method="post" action="${pageContext.request.contextPath}/endrepassord">
-		<table class="navbar">
+		<table class="center">
     		<tr>
        			<td>
        	 			<label for="gammeltpassord">Gammelt passord</label> 
@@ -39,14 +41,17 @@
         			<input type="password" name="gjentattnyttpassord" id="gjentattnyttpassord"/>
         		</td>
        	 	</tr>
-       	 	<tr>
+		</table>  
+		<table class="center">
+			<tr>
        	 		<td>
-        			<button id="submit-btn" type="submit">Endre passord</button>
+        			<button class="center button-base" id="submit-btn" type="submit">Endre passord</button>
 	        	</td>
 	    	</tr>
-		</table>  
+		</table>
 	</form>
-</fieldset>
+
+	</fieldset>
 
 </body>
 </html>

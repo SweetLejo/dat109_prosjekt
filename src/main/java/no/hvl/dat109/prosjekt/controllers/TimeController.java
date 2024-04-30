@@ -32,9 +32,11 @@ public class TimeController {
     ;
 
     /**
-     * @param session
+     * GET-forespørsel som henter viewet for registrering av en ny time.
+     *
+     * @param session inneholder brukerobjektet som brukes for å sjekke innlogging.
      * @param model
-     * @param ra
+     * @param ra      {@link RedirectAttributes} som brukes for å sende feilmeldinger over til redirect
      * @return
      */
     @GetMapping("registrertime")
@@ -50,9 +52,11 @@ public class TimeController {
     }
 
     /**
-     * @param session
+     * Registrerer en ny time og lagrer den i databasen.
+     *
+     * @param session inneholder brukerobjektet som brukes for å sjekke innlogging.
      * @param model
-     * @param ra
+     * @param ra      {@link RedirectAttributes} som brukes for å sende feilmeldinger over til redirect.
      * @return
      */
     @PostMapping("registrertime")

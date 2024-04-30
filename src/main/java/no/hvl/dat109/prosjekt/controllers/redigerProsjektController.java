@@ -72,6 +72,10 @@ public class redigerProsjektController {
             ra.addFlashAttribute("feilmeldinger", "ID må være 6 siffer");
             return "redirect:redigerProsjekt";
         }
+        if(prosjektnavn.isEmpty()) {
+            ra.addFlashAttribute("feilmeldinger","Må skrive inn navn");
+            return "redirect:redigerProsjekt";
+        }
         prosjektService.redigerProsjekt(prosjekt_id, prosjektnavn);
         ra.addFlashAttribute("suksessmelding", "Navnet til " + prosjekt_id + " ble oppdatert til " + prosjektnavn);
         return "redirect:redigerProsjekt";

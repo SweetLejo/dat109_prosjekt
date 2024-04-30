@@ -1,13 +1,13 @@
 
 body{
-/*    background-image: url("https://i.kym-cdn.com/entries/icons/original/000/000/684/d53c91p-a4ed1934-bb45-4aeb-8593-2bb8175041c7.png");
+    /*
+    background-image: url("https://i.kym-cdn.com/entries/icons/original/000/000/684/d53c91p-a4ed1934-bb45-4aeb-8593-2bb8175041c7.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
 
-    background-color: #36393e;
-*/
+    */
 }
 
 /* Style the tab */
@@ -15,6 +15,11 @@ body{
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 /* Style the buttons inside the tab */
@@ -49,28 +54,45 @@ body{
     border-top: none;
 }
 
-.tab {
-    display: flex;
-    justify-content: space-evenly;
-}
-
 .tablinks {
     flex-grow: 1;
     text-align: center;
 }
 
 .db_data{
-    width: 50%;
-    /*
-    margin: 0 auto;
-    */
-
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.db_data thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.db_data th,
+.db_data td {
+    padding: 12px 15px;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.db_data tbody tr {
+    border-bottom: 1px solid #dddddd;
+
+}
+
+.db_data tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.db_data tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
 }
 
 .logout {
@@ -144,4 +166,49 @@ label {
     vertical-align: middle;
     line-height: 1.5; /* To center the text with the icon */
     border-radius: 15px;
+}
+
+
+.center > div {
+    margin-bottom: 10px;
+}
+
+.search-input {
+    padding: 8px 10px; /* Add some padding inside the input field */
+    font-size: 1rem; /* Adjust font size as per your design */
+    border: 1px solid #ccc; /* Add a border to the input field */
+    border-radius: 20px; /* Rounded corners for the input field */
+    width: 100%; /* Full width - you may want to adjust or remove this */
+    max-width: 400px; /* A max-width can make it look good on wide screens */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    margin-bottom: 10px; /* Add some space below the input */
+    outline: none; /* Remove the default focus highlight */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.search-input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Add a glow effect */
+}
+
+
+.flex-container {
+    display: flex;
+    /*justify-content: space-between;*/
+}
+
+.flex-container > * {
+    flex-basis: 48%; /* Sets the size of each child in the container */
+    /* The width can be adjusted as needed, and is dependent on the container size */
+}
+
+.flex-container > table {
+    margin: 1%;
+}
+
+#rot {
+    margin: 1%; /* Removes default margin to ensure alignment at the top */
+    flex-grow: 1;
+    max-width: 300px;
+    max-height: 250px;
 }

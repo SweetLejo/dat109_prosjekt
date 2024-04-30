@@ -5,6 +5,8 @@
 
 <head>
     <title>Timeredigering</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <script src="js/timevalidering.js" defer></script>
@@ -13,19 +15,19 @@
         <c:choose>
             <c:when test="${bruker eq null}">
                 <td>
-                    <form action="/login" method="get">
+                    <form action="${pageContext.request.contextPath}/login" method="get">
                         <button type="submit">Logg inn</button>
                     </form>
                 </td>
             </c:when>
             <c:otherwise>
                 <td>
-                    <form action="/deltagerliste" method="get">
+                    <form action="${pageContext.request.contextPath}/deltagerliste" method="get">
                         <button type="submit">Deltagerliste</button>
                     </form>
                 </td>
                 <td>
-                    <form action="/logut" method="post">
+                    <form action="${pageContext.request.contextPath}/logut" method="post">
                         <button type="submit">Logg ut</button>
                     </form>
                 </td>
@@ -80,13 +82,13 @@
 </fieldset>
 
 <h3>Registrerte timer</h3>
-<table>
+<table class="db_data">
     <tr>
-        <th align="left">Bruker</th>
-        <th align="left">Time ID</th>
-        <th align="left">Antall timer</th>
-        <th align="left">Prosjekt ID</th>
-        <th align="left">Prosjekt navn</th>
+        <th>Bruker</th>
+        <th>Time ID</th>
+        <th>Antall timer</th>
+        <th>Prosjekt ID</th>
+        <th>Prosjekt navn</th>
     </tr>
     </tr>
     <c:forEach var="time" items="${timeliste}">

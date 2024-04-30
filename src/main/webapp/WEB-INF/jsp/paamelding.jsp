@@ -17,14 +17,14 @@
         <c:choose>
             <c:when test="${bruker eq null}">
                 <td>
-                    <form action="/login" method="get">
-                        <button type="submit">Logg inn</button>
+                    <form action="${pageContext.request.contextPath}/login" method="get">
+                        <button class="button-base sign-in fa fa-sign-in" type="submit"> Logg inn </button>
                     </form>
                 </td>
             </c:when>
             <c:otherwise>
                 <td>
-                    <form action="/deltagerliste" method="get">
+                    <form action="${pageContext.request.contextPath}/deltagerliste" method="get">
                         <button type="submit">Deltagerliste</button>
                     </form>
                 </td>
@@ -64,7 +64,7 @@
 
 
         <br>
-        <button class="button-base fa fa-sign-in sign-in" id="submit-btn" type="submit"> Opprett bruker </button>
+        <button class="button-base fa fa-sign-in make-user" id="submit-btn" type="submit"> Opprett bruker </button>
         
     </fieldset>
 </form>

@@ -1,6 +1,5 @@
 package no.hvl.dat109.prosjekt.controllers;
 
-import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -16,12 +15,9 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
 
 import no.hvl.dat109.prosjekt.entity.Bruker;
-import no.hvl.dat109.prosjekt.entity.Prosjekt;
 import no.hvl.dat109.prosjekt.repo.ProsjektRepo;
 import no.hvl.dat109.prosjekt.service.ProsjektService;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
-import java.util.Optional;
 
 
 @ExtendWith(MockitoExtension.class)

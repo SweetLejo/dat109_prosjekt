@@ -5,53 +5,45 @@
 
 <head>
     <title>Timeregistrering</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <script src="js/timevalidering.js" defer></script>
+<div class="center">
 <table class="navbar">
     <tr>
-        <c:choose>
-            <c:when test="${bruker eq null}">
                 <td>
-                    <form action="/login" method="get">
-                        <button type="submit">Logg inn</button>
-                    </form>
-                </td>
-            </c:when>
-            <c:otherwise>
-                <td>
-                    <form action="/deltagerliste" method="get">
-                        <button type="submit">Deltagerliste</button>
+                    <form action="${pageContext.request.contextPath}/deltagerliste" method="get">
+                        <button class="button-base" type="submit">Deltagerliste</button>
                     </form>
                 </td>
                 <td>
                     <form action="${pageContext.request.contextPath}/logut" method="post">
-                        <button type="submit">Logg ut</button>
+                        <button class="fa fa-sign-out button-base logout" type="submit">Logg ut</button>
                     </form>
                 </td>
-                <td>
-                    Du er logget inn som ${bruker.fornavn} ${bruker.etternavn}
-                </td>
-            </c:otherwise>
-        </c:choose>
     </tr>
 </table>
+</div>
 
-<h2>Timeregistrering</h2>
-<p style="color:red;">${feilmelding}</p>
+<p class="feilmelding">${feilmelding}</p>
 
+<div class="flex-container center">
 <fieldset id="rot">
+    <legend>Timeregistrering</legend>
     <form action="${pageContext.request.contextPath}/registrertime" method="post">
-
-        <label>Prosjekt ID<br>
-            <input type="text" name="prosjekt_id" id="prosjekt_id" value="${prosjekt_id}"/><br></label>
-
+        <div class="new-line center">
+            <label>Prosjekt ID<br>
+                <input type="text" name="prosjekt_id" id="prosjekt_id" value="${prosjekt_id}"/><br></label>
+        </div>
+        <div class="new-line center">
         <label>Antall timer<br>
             <input type="text" name="antallTimer" id="antallTimer" value="${antallTimer}"/><br></label>
-
-        <br>
-        <button id="submit-btn" type="submit">Registrer</button>
-
+        </div>
+        <div class="new-line center">
+        <button class="button-base make-user" id="submit-btn" type="submit">Registrer</button>
+        </div>
     </form>
 
     <c:if test="${prosjekt != null}">
@@ -64,12 +56,10 @@
     </c:if>
 
 </fieldset>
-
-<h3>Registrerte prosjekter</h3>
-<table>
+<table class="db_data">
     <tr>
-        <th align="left">Prosjekt id</th>
-        <th align="left">Navn</th>
+        <th>Prosjekt id</th>
+        <th>Navn</th>
     </tr>
     <c:forEach var="prosjekt" items="${prosjekter}">
         <tr>
@@ -78,6 +68,8 @@
         </tr>
     </c:forEach>
 </table>
+
+</div>
 
 </body>
 </html>

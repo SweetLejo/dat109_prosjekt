@@ -56,7 +56,7 @@ public class SlettProsjektController {
      * @return              En {@link String} som representerer en omdirigering til neste visning, eller laster skjema på nytt
      */
     @PostMapping("slettprosjekt")
-    public String postSlettProsjekt(@RequestParam String prosjekt_id, @RequestParam(defaultValue = "false") boolean deleteTimereg, RedirectAttributes ra) {
+    public String postSlettProsjekt(@RequestParam String prosjekt_id, RedirectAttributes ra) {
         if(prosjekt_id == null) {
             ra.addFlashAttribute("feilmeldinger", "ID kan ikke være tomt");
             return "redirect:slettprosjekt";
